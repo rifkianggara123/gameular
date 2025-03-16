@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #loading-text {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Snake Game</h1>
+    <div id="loading-text">Loading</div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadingText = document.getElementById("loading-text");
+            let dots = 0;
+            
+            const loadingInterval = setInterval(() => {
+                dots = (dots + 1) % 4;
+                loadingText.innerText = "Loading" + ".".repeat(dots);
+            }, 500);
+            
+            setTimeout(() => {
+                clearInterval(loadingInterval);
+                window.location.href = "ular.js";
+            }, 3000); // Redirect to ular.js after 3 seconds
+        });
+    </script>
+</body>
+</html>
